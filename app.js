@@ -1,14 +1,8 @@
 const API_KEY = "e78f4d648f70456d911200649263004";
 
-async function getWeather(city = "Gujranwala") {
-    try {
-        const res = await fetch(
-            `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=yes`
-        );
-
-        const data = await res.json();
-
-        if (data.error) {
+function out(data)
+{
+    if (data.error) {
             alert("City not found!");
             return;
         }
@@ -44,6 +38,17 @@ async function getWeather(city = "Gujranwala") {
                 minute: "2-digit",
                 hour12: true
             });
+}
+
+async function getWeather(city) {
+    try {
+
+        const res = await fetch(
+            `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=yes`
+        );
+        const data = await res.json();
+
+         out(data)
 
     } catch (error) {
         console.log(error);
@@ -63,4 +68,20 @@ document.getElementById("cityInput").addEventListener("keypress", (e) => {
     }
 });
 
-getWeather();
+window.addEventListener("load", () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${position.coords.latitude},${position.coords.longitude}&aqi=yes`)
+                .then(res => res.json()).then(data => {
+                    out(data);
+                });
+    },
+    (error) => {
+      console.log("Error:", error.message);
+    }
+  );
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
+});
