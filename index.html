@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="card">
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Search city...">
+        <button onclick="searchWeather()">🔍</button>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="location">Loading...</div>
+    </div>
+
+    <div id="row">
+        <div class="desc" id="desc1">--</div>
+        <div class="desc" id="time">--</div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <div class="left">
+            <div class="icon"></div>
+            <div class="temp" id="temp">--°C</div>
+        </div>
+        <div class="right">
+            <div class="feels">Feels like <span id="feels">--</span>°C</div>
+            <div class="condition" id="condition">--</div>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div><span>Wind</span><br><b id="wind">--</b></div>
+        <div><span>Humidity</span><br><b id="humidity">--</b></div>
+        <div><span>Visibility</span><br><b id="visibility">--</b></div>
+        <div><span>Pressure</span><br><b id="pressure">--</b></div>
+        <div><span>Dew</span><br><b id="dew">--</b></div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

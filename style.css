@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 20px;
+  width: 420px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* SEARCH */
+.search-box {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  border: none;
+  background: #6c63ff;
+  color: white;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #5848e5;
+}
+
+/* HEADER */
+.header {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* MAIN */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.icon img {
+  width: 60px;
+}
+
+.temp {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.right {
+  text-align: right;
+}
+
+.condition {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.feels {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.stats span {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.stats b {
+  font-size: 14px;
+}
+
+/* DESC */
+.desc {
+  font-size: 12px;
+  color: #bbb;
+}
